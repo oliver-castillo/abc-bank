@@ -11,7 +11,7 @@ public class DefaultExchangeRateResource implements ExchangeRateResource {
     private final ExchangeRateService exchangeRateService;
 
     @Override
-    public ExchangeRateDto getExchangeRate() {
-        return exchangeRateService.getExchangeRate();
+    public ExchangeRateDto getExchangeRate(String dni) {
+        return exchangeRateService.getExchangeRate(dni);
     }
 }
