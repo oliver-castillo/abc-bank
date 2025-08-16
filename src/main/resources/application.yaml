@@ -1,0 +1,22 @@
+# Config BD SQLite
+quarkus:
+  http:
+    port: 8080
+  reactive: false
+  datasource:
+    db-kind: other
+    jdbc:
+      driver: org.sqlite.JDBC
+      url: jdbc:sqlite:./database/sqlite.db
+    username:
+    password:
+  hibernate-orm:
+    database:
+      scripts:
+        generation: update
+    dialect: org.hibernate.community.dialect.SQLiteDialect
+  rest-client:
+    free-e-api:
+      url: https://free.e-api.net.pe
+      connect-timeout: 5000
+      read-timeout: 5000
