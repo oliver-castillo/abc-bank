@@ -5,8 +5,9 @@ import jakarta.ws.rs.Path;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @RegisterRestClient(configKey = "free-e-api")
-@Path("/tipo-cambio/today.json")
-public interface ApiProxy {
+@Path("/tipo-cambio")
+public interface ExchangeRateApiProxy {
     @GET
-    PostProxy getExchangeRate();
+    @Path("/today.json")
+    ExchangeRateProxy getExchangeRate();
 }

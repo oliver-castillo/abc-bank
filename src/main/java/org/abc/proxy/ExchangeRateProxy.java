@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-public class PostProxy {
+public class ExchangeRateProxy {
     private Date fecha;
     private Double sunat;
     private Double compra;
