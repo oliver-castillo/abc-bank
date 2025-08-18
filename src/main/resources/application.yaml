@@ -1,20 +1,16 @@
-# Config BD SQLite
 quarkus:
   http:
     port: 8080
   reactive: false
   datasource:
-    db-kind: other
+    db-kind: postgresql
     jdbc:
-      driver: org.sqlite.JDBC
-      url: jdbc:sqlite:./database/sqlite.db
-    username:
-    password:
+      url: jdbc:postgresql://localhost:5432/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   hibernate-orm:
     database:
-      scripts:
-        generation: update
-    dialect: org.hibernate.community.dialect.SQLiteDialect
+      generation: drop-and-create
   rest-client:
     free-e-api:
       url: https://free.e-api.net.pe
