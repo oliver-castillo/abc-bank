@@ -2,7 +2,8 @@ package org.abc.resource;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import lombok.RequiredArgsConstructor;
-import org.abc.dto.ExchangeRateDto;
+import org.abc.model.dto.ExchangeRateDto;
+import org.abc.model.dto.RequestDto;
 import org.abc.service.ExchangeRateService;
 
 @RequiredArgsConstructor
@@ -13,5 +14,10 @@ public class DefaultExchangeRateResource implements ExchangeRateResource {
     @Override
     public ExchangeRateDto getExchangeRate(String dni) {
         return exchangeRateService.getExchangeRate(dni);
+    }
+
+    @Override
+    public RequestDto getRequestInfoByDni(String dni) {
+        return exchangeRateService.getRequestInfoByDni(dni);
     }
 }
