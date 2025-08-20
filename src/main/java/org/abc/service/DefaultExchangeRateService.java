@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.abc.exception.TooManyRequestsException;
 import org.abc.mapper.ExchangeRateMapper;
 import org.abc.model.dto.ExchangeRateDto;
-import org.abc.model.dto.RequestDto;
+import org.abc.model.dto.RequestInfoDto;
 import org.abc.model.entity.ExchangeRateRequestEntity;
 import org.abc.repository.ExchangeRateRequestRepository;
 
@@ -31,11 +31,11 @@ public class DefaultExchangeRateService implements ExchangeRateService {
     }
 
     @Override
-    public RequestDto getRequestInfoByDni(String dni) {
-        RequestDto requestDto = new RequestDto();
-        requestDto.setDni(dni);
-        requestDto.setNumberOfRequests((int) exchangeRateRequestRepository.count("dni", dni));
-        return requestDto;
+    public RequestInfoDto getRequestInfoByDni(String dni) {
+        RequestInfoDto requestInfoDto = new RequestInfoDto();
+        requestInfoDto.setDni(dni);
+        requestInfoDto.setNumberOfRequests((int) exchangeRateRequestRepository.count("dni", dni));
+        return requestInfoDto;
     }
 
     private ExchangeRateRequestEntity buildRequestEntity(String dni, ExchangeRateDto exchangeRateDto) {

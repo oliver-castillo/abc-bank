@@ -6,7 +6,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.QueryParam;
 import org.abc.model.dto.ExchangeRateDto;
-import org.abc.model.dto.RequestDto;
+import org.abc.model.dto.RequestInfoDto;
 
 @Path("/exchange-rate")
 public interface ExchangeRateResource {
@@ -21,7 +21,7 @@ public interface ExchangeRateResource {
 
     @GET
     @Path("/requests-info")
-    RequestDto getRequestInfoByDni(
+    RequestInfoDto getRequestInfoByDni(
             @QueryParam("dni")
             @NotNull(message = "El número de DNI es requerido")
             @Pattern(regexp = "^\\d{8}$", message = "El número de DNI debe contener 8 dígitos numéricos")
