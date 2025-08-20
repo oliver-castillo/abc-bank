@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "1f4ae8b2-2e0c-4d46-8ee7-4d1c42e472c6",
+		"name": "ABC-BANK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18448681"
+	},
+	"item": [
+		{
+			"name": "OBTENER_TIPO_DE_CAMBIO",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchange-rate/info?dni=12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate",
+						"info"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OBTENER_NRO_DE_SOLICITUDES_POR_DNI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/exchange-rate/requests-info?dni=12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate",
+						"requests-info"
+					],
+					"query": [
+						{
+							"key": "dni",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
